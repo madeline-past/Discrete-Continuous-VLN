@@ -257,7 +257,9 @@ class CMANet(Net):
             #torch.Size([12, 224, 224, 3])
             obs_view12['rgb'] = rgb_batch
 
+            # torch.Size([12, 128, 4, 4])
             depth_embedding = self.depth_encoder(obs_view12)
+            # torch.Size([12, 2048, 7, 7])
             rgb_embedding = self.rgb_encoder(obs_view12)
 
             ''' waypoint prediction ----------------------------- '''
